@@ -1,0 +1,14 @@
+body {
+    font-family: sans-serif;
+    max-width: 35em;
+    margin-left: 4em;
+    line-height: 1.4em;
+}
+
+#title-block-header {
+    display: none;
+}
+
+h1 {font-size: 1.24em}
+h2 {font-size: 1.16em}
+h3 {font-size: 1.08em}

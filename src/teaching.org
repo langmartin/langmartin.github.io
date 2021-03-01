@@ -1,0 +1,74 @@
+#+title: langmartin teaching
+
+* Third Grade SICP
+[2021-03-17 Wed]
+
+I've got a lesson that I've been doing with the kids on the
+chalkboard, to introduce programming. We wrote these functions in
+Racket later, but we started just stepping through the evaluation.
+
+We start by providing =count-up= and =count-down=, and then build up
+arithmetic. As motivation, I told my son Milo that he could use a
+calculator on some of his math problems, but only if he made it
+himself.
+
+First, iterative plus:
+
+#+begin_src scheme
+  (define (plus x y)
+    (if (= y 0)
+        x
+        (plus (count-up x) (count-down y))))
+
+  (plus 3 2) =>
+  (plus 4 1) =>
+  (plus 5 0) =>
+  5
+#+end_src
+
+The idea here is to show that these functions are all equal to each
+other in a way that matches how we already think about addition. Next
+the recursive way to write plus:
+
+#+begin_src scheme
+  (define (plus x y)
+    (if (= y 0)
+        x
+        (count-up (plus x (count-down y)))))
+
+  (plus 3 2) =>
+  (count-up (plus 3 1)) =>
+  (count-up (count-up (plus 3 0))) =>
+  (count-up (count-up 3)) =>
+  5
+#+end_src
+
+The idea here is just to convince ourselves that it reaches the same
+answer.
+
+Next:
+
+#+begin_src scheme
+  (define (times x y)
+    (if (= y 1)
+        x
+        (plus x
+              (times x (count-down y)))))
+#+end_src
+
+Here the recursive implementation saves us an internal variable and a
+new construct (named let), so it's simpler. Also our math intuition is
+back even for the recursive version, =(times 3 2)= equals =(plus 3
+(times 3 1))=.
+
+I like these because they're challenging, simple, and helpful for math
+intuition. Right about when we got here, Milo discovered powers for
+himself by the implication of =times=. The functions also give you
+somewhere to go next: he immediately wanted to work on subtraction and
+division. Division was fun \mdash we implemented integer division as
+separate =quotient= and =remainder= in terms of subtraction, in terms
+of counting.
+
+This is all balanced by plenty of [[https://scratch.mit.edu][Scratch]], which satisfies the need
+for something easy and concrete to fiddle with and explore, but these
+functions pin down the hard and abstract side of learning the art.

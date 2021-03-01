@@ -1,0 +1,31 @@
+* How I Approach Teaching Programming
+
+I've only ever taught adults how to program (only once) so I've been
+working pretty hard to figure out how to teach my kids this year.
+
+When I taught the intro class for some friends we used [[https://mitpress.mit.edu/sites/default/files/sicp/index.html][Structure and
+Interpretation of Computer Programs]] and Brian Harvey's lectures on it:
+[[https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?tab=collection][Brian Harvey CS 61a]] (also on [[https://www.youtube.com/playlist?list=PLhMnuBfGeCDNgVzLPxF9o5UNKG1b-LFY9][youtube]]).
+
+I spent several years self taught: fiddling with shell, perl, and PHP
+(for my sins). Devops hadn't quite been invented, but I was too lazy
+to do all the server maintenance I was responsible for. This gradual,
+adhoc approach to learning programming made me into someone who could
+write a script but wracked up technical debt at an astonishing pace.
+SICP was a life-line and revelation.
+
+I assumed that teaching SICP first would allow my students to skip all
+those years and just start with the right stuff. I was surprised by
+the extent to which this was not the case, it seems like some amount
+of self-directed exploration is a necessary part of learning the art.
+
+With the kids, For the fiddling, I've relied on the thoroughly
+excellent [[https://scratch.mit.edu/][Scratch]]. It's great for providing a platform that makes
+sense and is powerful enough to make a video game. The block design
+really solves the problem with understanding syntax completely, and
+the object model is simple and expressive enough to provide a
+wonderful playground.
+
+As I can get the kids interested in more general purpose languages
+I've been aiming for clojurescript + canvas to avoid some of the hair
+on the javascript + DOM "system".
