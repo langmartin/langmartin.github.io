@@ -1,0 +1,41 @@
+* Stethoscape
+
+Stethoscape automatically arranges all metrics in a graphite database
+in a heat-mapped ring on the screeen. It also represents each value as
+a spatially positioned sound. You are in the center of the ring,
+facing up. Put on your headphones, open another tab, and go. Like a
+spider in her web...
+
+- At more than 1,000 metrics total, there's static caused by
+  phasing, I guess. Bundle metrics so that you listen to something
+  more like a histogram?
+- The static is much worse using the HRTF panning model
+- Might be worth abstracting the panning nodes: experiment to find a
+  good number where the direction can be determined, and map sounds
+  onto those.
+
+* Roadmap
+
+- [X] Simulate some metric-like data
+  - [X] Common prefixes
+  - [X] Statefully adjust random changes
+
+- [X] Make some noise
+  - [X] Noise only on changes from the average
+
+- [-] Canvas to draw the ring
+  - [X] Use common prefixes to bundle metrics in slices
+  - [X] Heatmap color the ring
+    - Brightness for magnitude
+    - Blue/red shift for direction
+  - [ ] Show the metric name
+
+- [ ] Access real data
+  - [ ] Graphite config & authentication
+    - [ ] Maybe [[https://graphite-api.readthedocs.io/en/latest/][Graphite API]] a python server providing access
+  - [ ] Enumerate metrics
+  - [ ] Tail changes
+
+* Notes
+
+- Firefox requires =about:config= =privacy.file_unique_origin= set to false
