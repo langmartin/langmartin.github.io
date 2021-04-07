@@ -1,0 +1,3 @@
+[submodule "stethoscape"]
+	path = stethoscape
+	url = git@github.com:langmartin/stethoscape
